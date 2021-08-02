@@ -8,8 +8,8 @@ const app = express();
 // Connect Database
 connectDB();
 
-
-//app.use(express.json());
+//needed to parse json data
+app.use(express.json());
 app.get('/', (req, res) => res.send('Api is running'));
 // Define Routes
 app.use('/api/user', require('./second/user'));
