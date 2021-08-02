@@ -25,7 +25,7 @@ router.post(
         const { name, email, password } = req.body;
 
         try {
-            let user = await User.findone({ email });
+            let user = await User.findOne({ email }); // findone is not a method , its findOne
 
             if (user) {
                 res.status(400).json({ error: [{ msg: 'User already exists' }] });
